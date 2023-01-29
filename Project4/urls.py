@@ -9,4 +9,4 @@ urlpatterns = [
     path('', include("main.urls")),
     path('tinymce/', include('tinymce.urls')),
     path('hitcount/', include('hitcount.urls', namespace='hitcount')),
-	]
+]

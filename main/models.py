@@ -5,6 +5,7 @@ from django_resized import ResizedImageField
 from tinymce.models import HTMLField
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
+from taggit.managers import TaggableManager
 
 User = get_user_model()
 
@@ -57,11 +58,17 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     date = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
+    hit_count_generic = GenericRelation(
+        HitCount,
+        object_id_field='object_pk',
         related_query_name='hit_count_generic_relation'
     )
+    tags = TaggableManager()
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title

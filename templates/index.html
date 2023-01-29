@@ -3,10 +3,16 @@
 {% block content %}
 
     <div class="container">
+        <div class="video-wrapper">
+            <video playsinline autoplay muted loop poster>
+              <source src="static/assets/videos/spacebackground.mp4" type="video/webm">
+            </video>
+          </div>
         <div class="subforum">
             <div class="subforum-title">
                 <h1>General Information</h1>
             </div>
+
             <div class="subforum-row">
                 <div class="subforum-icon subforum-column center">
                     <i class="fa fa-rocket center"></i>
@@ -201,5 +207,5 @@
             <span>Latest post: <b><a href="">Random post</a></b> on Dec 15 2022 By <a href="">RandomUser</a></span>.<br>
             <span>Check <a href="">the latest posts</a> .</span><br>
         </div>
-
-        {% endblock content %}       
+    
+        {% endblock content %}

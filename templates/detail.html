@@ -2,6 +2,12 @@
     
 {% block content %}
 
+<form method="POST">
+    {% csrf_token %}
+    <!-- form fields go here -->
+    <input type="submit" value="Submit">
+  </form>
+
     <div class="container">
         <!--Navigation-->
         <div class="navigate">

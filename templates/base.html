@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 
+<form method="POST">
+    {% csrf_token %}
+    <!-- form fields go here -->
+    <input type="submit" value="Submit">
+  </form>
+
 <body>
     <header>
         <!--NavBar Section-->

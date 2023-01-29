@@ -5,6 +5,8 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls), 
-    path('', include("main.urls")), 
+    path('admin/', admin.site.urls),
+    path('', include("main.urls")),
+    path('tinymce/', include('tinymce.urls')),
+    path('hitcount/', include('hitcount.urls', namespace='hitcount')),
 	]
